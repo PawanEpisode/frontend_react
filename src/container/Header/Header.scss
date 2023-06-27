@@ -1,0 +1,247 @@
+#home {
+    position: relative;
+    background: url('../../assets/bgIMG.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+
+    .app__wrapper {
+        padding: 0;
+
+        .copyright {
+            display: none;
+        }
+    }
+}
+
+.app__header {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+
+    padding: 10rem 2rem 0;
+
+    @media screen and (min-width: 1300px) {
+        padding-top: 8rem;
+    }
+
+    @media screen and (max-width: 1200px) {
+        flex-direction: column;
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 6rem 1rem 2rem;
+    }
+
+    &-img {
+        flex: 1;
+        height: 100%;
+        margin-top: 60px;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        position: relative;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            z-index: 1;
+        }
+
+        .overlay_circle {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            width: 100%;
+            height: 90%;
+        }
+
+        @media screen and (max-width: 1200px) {
+            margin: 2rem 0;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &-info {
+        flex: 0.65;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 100%;
+
+        @media screen and (max-width: 1300px) {
+            width: 100%;
+            margin-right: 0rem;
+            // margin-top: 75px;
+        }
+    }
+
+    &-badge {
+        width: 100%;
+        height: 260px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+
+        .badge-cmp,
+        .tag-cmp {
+            padding: 1rem 2rem;
+            border: var(--white-color);
+            border-radius: 15px;
+            flex-direction: row;
+            width: auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            opacity: 1;
+            z-index: 100;
+        }
+
+        @media screen and (max-width: 1200px) {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    &-circles {
+        height: 100%;
+        width: 400px;
+        margin: 0 auto;
+
+        .circle-cmp-0,
+        .circle-cmp-1,
+        .circle-cmp-2,
+        .circle-cmp-3,
+        .circle-cmp-4 {
+            margin: 1rem;
+            width: 100px;
+            height: 70px;
+            top: 50px;
+            float: left;
+            background: #B4CDCD;
+            position: relative;
+
+            background-color: var(--white-color);
+
+            img {
+                width: 70%;
+                height: 70%;
+            }
+
+            @media screen and (max-width: 400px) {
+                margin: 0.2rem;
+            }
+        }
+
+        .circle-cmp-3,
+        .circle-cmp-4 {
+            top: 60px;
+            left: 70px;
+
+            @media screen and (max-width: 400px) {
+                margin: 0.2rem;
+                top: 75px;
+                left: 53px;
+            }
+        }
+
+        .circle-cmp-0:before,
+        .circle-cmp-1:before,
+        .circle-cmp-2:before,
+        .circle-cmp-3:before,
+        .circle-cmp-4:before {
+            content: "";
+            position: absolute;
+            top: -25px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 25px solid var(--white-color);
+        }
+
+        .circle-cmp-0:after,
+        .circle-cmp-1:after,
+        .circle-cmp-2:after,
+        .circle-cmp-3:after,
+        .circle-cmp-4:after {
+            content: "";
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 25px solid var(--white-color);
+        }
+
+        .circle-cmp-0:hover,
+        .circle-cmp-1:hover,
+        .circle-cmp-2:hover,
+        .circle-cmp-3:hover,
+        .circle-cmp-4:hover {
+            transition: all .2s ease-in-out;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        }
+    }
+
+}
+
+.wave {
+    font-size: 50px;
+    animation-name: wave-animation;
+    /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;
+    /* Change to speed up or slow down */
+    animation-iteration-count: infinite;
+    /* Never stop waving :) */
+    transform-origin: 70% 70%;
+    /* Pivot around the bottom-left palm */
+    display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0.0deg)
+    }
+
+    10% {
+        transform: rotate(14.0deg)
+    }
+
+    /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+        transform: rotate(-8.0deg)
+    }
+
+    30% {
+        transform: rotate(14.0deg)
+    }
+
+    40% {
+        transform: rotate(-4.0deg)
+    }
+
+    50% {
+        transform: rotate(10.0deg)
+    }
+
+    60% {
+        transform: rotate(0.0deg)
+    }
+
+    /* Reset for the last half to pause */
+    100% {
+        transform: rotate(0.0deg)
+    }
+}
